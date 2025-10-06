@@ -1,0 +1,722 @@
+[
+  {
+    "train_id": 1,
+    "train_number": "AL 0001",
+    "train_type": "Al Boraq",
+    "speed_kmh": 320,
+    "capacity": 533,
+    "pricing_tier": "premium",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 2,
+    "train_number": "AL 0002",
+    "train_type": "Al Boraq",
+    "speed_kmh": 320,
+    "capacity": 533,
+    "pricing_tier": "premium",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 3,
+    "train_number": "AL 0003",
+    "train_type": "Al Boraq",
+    "speed_kmh": 320,
+    "capacity": 533,
+    "pricing_tier": "premium",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 4,
+    "train_number": "AL 0004",
+    "train_type": "Al Boraq",
+    "speed_kmh": 320,
+    "capacity": 533,
+    "pricing_tier": "premium",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 5,
+    "train_number": "AL 0005",
+    "train_type": "Al Boraq",
+    "speed_kmh": 320,
+    "capacity": 533,
+    "pricing_tier": "premium",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 6,
+    "train_number": "AL 0006",
+    "train_type": "Al Boraq",
+    "speed_kmh": 320,
+    "capacity": 533,
+    "pricing_tier": "premium",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 7,
+    "train_number": "AL 0007",
+    "train_type": "Al Boraq",
+    "speed_kmh": 320,
+    "capacity": 533,
+    "pricing_tier": "premium",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 8,
+    "train_number": "AL 0008",
+    "train_type": "Al Boraq",
+    "speed_kmh": 320,
+    "capacity": 533,
+    "pricing_tier": "premium",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 9,
+    "train_number": "AL 0009",
+    "train_type": "Al Boraq",
+    "speed_kmh": 320,
+    "capacity": 533,
+    "pricing_tier": "premium",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 10,
+    "train_number": "AL 0010",
+    "train_type": "Al Boraq",
+    "speed_kmh": 320,
+    "capacity": 533,
+    "pricing_tier": "premium",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 11,
+    "train_number": "AL 0011",
+    "train_type": "Al Boraq",
+    "speed_kmh": 320,
+    "capacity": 533,
+    "pricing_tier": "premium",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 12,
+    "train_number": "AL 0012",
+    "train_type": "Al Boraq",
+    "speed_kmh": 320,
+    "capacity": 533,
+    "pricing_tier": "premium",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 13,
+    "train_number": "TNR0013",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 14,
+    "train_number": "TNR0014",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 15,
+    "train_number": "TNR0015",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 16,
+    "train_number": "TNR0016",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 17,
+    "train_number": "TNR0017",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 18,
+    "train_number": "TNR0018",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 19,
+    "train_number": "TNR0019",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 20,
+    "train_number": "TNR0020",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 21,
+    "train_number": "TNR0021",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 22,
+    "train_number": "TNR0022",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 23,
+    "train_number": "TNR0023",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 24,
+    "train_number": "TNR0024",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 25,
+    "train_number": "TNR0025",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 26,
+    "train_number": "TNR0026",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 27,
+    "train_number": "TNR0027",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 28,
+    "train_number": "TNR0028",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 29,
+    "train_number": "TNR0029",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 30,
+    "train_number": "TNR0030",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 31,
+    "train_number": "TNR0031",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 32,
+    "train_number": "TNR0032",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 33,
+    "train_number": "TNR0033",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 34,
+    "train_number": "TNR0034",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 35,
+    "train_number": "TNR0035",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 36,
+    "train_number": "TNR0036",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 37,
+    "train_number": "TNR0037",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 38,
+    "train_number": "TNR0038",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 39,
+    "train_number": "TNR0039",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 40,
+    "train_number": "TNR0040",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 41,
+    "train_number": "TNR0041",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 42,
+    "train_number": "TNR0042",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 43,
+    "train_number": "TNR0043",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 44,
+    "train_number": "TNR0044",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 45,
+    "train_number": "TNR0045",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 46,
+    "train_number": "TNR0046",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 47,
+    "train_number": "TNR0047",
+    "train_type": "TNR",
+    "speed_kmh": 160,
+    "capacity": 400,
+    "pricing_tier": "standard",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 48,
+    "train_number": "REG0048",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 49,
+    "train_number": "REG0049",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 50,
+    "train_number": "REG0050",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 51,
+    "train_number": "REG0051",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 52,
+    "train_number": "REG0052",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 53,
+    "train_number": "REG0053",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 54,
+    "train_number": "REG0054",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 55,
+    "train_number": "REG0055",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 56,
+    "train_number": "REG0056",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 57,
+    "train_number": "REG0057",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 58,
+    "train_number": "REG0058",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 59,
+    "train_number": "REG0059",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 60,
+    "train_number": "REG0060",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 61,
+    "train_number": "REG0061",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 62,
+    "train_number": "REG0062",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 63,
+    "train_number": "REG0063",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 64,
+    "train_number": "REG0064",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 65,
+    "train_number": "REG0065",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 66,
+    "train_number": "REG0066",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 67,
+    "train_number": "REG0067",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 68,
+    "train_number": "REG0068",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 69,
+    "train_number": "REG0069",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 70,
+    "train_number": "REG0070",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 71,
+    "train_number": "REG0071",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 72,
+    "train_number": "REG0072",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 73,
+    "train_number": "REG0073",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 74,
+    "train_number": "REG0074",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 75,
+    "train_number": "REG0075",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 76,
+    "train_number": "REG0076",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 77,
+    "train_number": "REG0077",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 78,
+    "train_number": "REG0078",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 79,
+    "train_number": "REG0079",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  },
+  {
+    "train_id": 80,
+    "train_number": "REG0080",
+    "train_type": "Regular",
+    "speed_kmh": 100,
+    "capacity": 300,
+    "pricing_tier": "economy",
+    "operational_status": "active"
+  }
+]

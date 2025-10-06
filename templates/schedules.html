@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedules - MarocRail Optimizer</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/translations.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="nav-brand">
+                <img src="/static/logo.png" alt="MarocRail Logo" style="height: 30px; width: auto; margin-right: 10px;">
+                MarocRail Optimizer
+            </a>
+            <ul class="nav-links">
+                <li><a href="/dashboard" data-i18n="dashboard">Dashboard</a></li>
+                <li><a href="/schedules" data-i18n="schedules">Schedules</a></li>
+                <li><a href="/analytics" data-i18n="analytics">Analytics</a></li>
+                <li><a href="/predict" data-i18n="predict">Predict</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+                <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 data-i18n="trainSchedules">Train Schedules</h1>
+        
+        <div class="card">
+            <div class="filter-bar">
+                <select id="filter-day" class="form-control" style="width: auto;">
+                    <option value="Monday" data-i18n="monday">Monday</option>
+                    <option value="Tuesday" data-i18n="tuesday">Tuesday</option>
+                    <option value="Wednesday" data-i18n="wednesday">Wednesday</option>
+                    <option value="Thursday" data-i18n="thursday">Thursday</option>
+                    <option value="Friday" data-i18n="friday">Friday</option>
+                    <option value="Saturday" data-i18n="saturday">Saturday</option>
+                    <option value="Sunday" data-i18n="sunday">Sunday</option>
+                </select>
+                <button class="btn btn-primary" onclick="loadSchedules()" data-i18n="loadSchedules">Load Schedules</button>
+            </div>
+
+            <div id="schedules-count" style="margin-bottom: 1rem; color: #666;"></div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th data-i18n="train">Train</th>
+                        <th data-i18n="type">Type</th>
+                        <th data-i18n="route">Route</th>
+                        <th data-i18n="departure">Departure</th>
+                        <th data-i18n="arrival">Arrival</th>
+                        <th data-i18n="platform">Platform</th>
+                        <th data-i18n="capacity">Capacity</th>
+                        <th data-i18n="status">Status</th>
+                    </tr>
+                </thead>
+                <tbody id="schedules-body">
+                    <tr><td colspan="8" class="loading" data-i18n="selectDay">Select a day and click Load</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        async function loadSchedules() {
+            const day = document.getElementById('filter-day').value;
+            const tbody = document.getElementById('schedules-body');
+            
+            tbody.innerHTML = '<tr><td colspan="8" class="loading">Loading...</td></tr>';
+            
+            try {
+                const response = await fetch(`/api/schedules?day=${day}`);
+                const data = await response.json();
+                
+                if (data.success && data.data.length > 0) {
+                    document.getElementById('schedules-count').textContent = 
+                        `Showing ${data.data.length} schedules for ${day}`;
+                    
+                    tbody.innerHTML = data.data.map(schedule => {
+                        const badge = schedule.status === 'scheduled' ? 'success' : 
+                                     schedule.status === 'delayed' ? 'warning' : 'danger';
+                        
+                        const trainBadge = schedule.train_type === 'Al Boraq' ? 'info' :
+                                          schedule.train_type === 'TNR' ? 'warning' : 'secondary';
+                        
+                        return `
+                            <tr>
+                                <td><strong>${schedule.train_number}</strong></td>
+                                <td><span class="badge badge-${trainBadge}">${schedule.train_type}</span></td>
+                                <td>${schedule.origin_station} → ${schedule.destination_station}</td>
+                                <td>${schedule.departure_time}</td>
+                                <td>${schedule.arrival_time}</td>
+                                <td>${schedule.platform}</td>
+                                <td>${schedule.capacity}</td>
+                                <td><span class="badge badge-${badge}">${schedule.status}</span></td>
+                            </tr>
+                        `;
+                    }).join('');
+                } else {
+                    tbody.innerHTML = '<tr><td colspan="8">No schedules found</td></tr>';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                tbody.innerHTML = '<tr><td colspan="8" class="error">Failed to load schedules</td></tr>';
+            }
+        }
+
+        window.onload = () => loadSchedules();
+    </script>
+</body>
+</html>

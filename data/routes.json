@@ -1,0 +1,227 @@
+[
+  {
+    "route_id": 1,
+    "origin_station_id": 1,
+    "origin_name": "Casa-Port",
+    "destination_station_id": 3,
+    "destination_name": "Rabat-Ville",
+    "distance_km": 85.54,
+    "typical_duration_minutes": 50
+  },
+  {
+    "route_id": 2,
+    "origin_station_id": 2,
+    "origin_name": "Casa-Voyageurs",
+    "destination_station_id": 3,
+    "destination_name": "Rabat-Ville",
+    "distance_km": 84.47,
+    "typical_duration_minutes": 55
+  },
+  {
+    "route_id": 3,
+    "origin_station_id": 2,
+    "origin_name": "Casa-Voyageurs",
+    "destination_station_id": 8,
+    "destination_name": "Marrakech",
+    "distance_km": 221.06,
+    "typical_duration_minutes": 180
+  },
+  {
+    "route_id": 4,
+    "origin_station_id": 1,
+    "origin_name": "Casa-Port",
+    "destination_station_id": 9,
+    "destination_name": "Tanger-Ville",
+    "distance_km": 289.63,
+    "typical_duration_minutes": 270
+  },
+  {
+    "route_id": 5,
+    "origin_station_id": 2,
+    "origin_name": "Casa-Voyageurs",
+    "destination_station_id": 7,
+    "destination_name": "Fès",
+    "distance_km": 244.25,
+    "typical_duration_minutes": 210
+  },
+  {
+    "route_id": 6,
+    "origin_station_id": 3,
+    "origin_name": "Rabat-Ville",
+    "destination_station_id": 5,
+    "destination_name": "Kenitra",
+    "distance_km": 35.77,
+    "typical_duration_minutes": 25
+  },
+  {
+    "route_id": 7,
+    "origin_station_id": 3,
+    "origin_name": "Rabat-Ville",
+    "destination_station_id": 7,
+    "destination_name": "Fès",
+    "distance_km": 169.0,
+    "typical_duration_minutes": 150
+  },
+  {
+    "route_id": 8,
+    "origin_station_id": 3,
+    "origin_name": "Rabat-Ville",
+    "destination_station_id": 9,
+    "destination_name": "Tanger-Ville",
+    "distance_km": 214.11,
+    "typical_duration_minutes": 180
+  },
+  {
+    "route_id": 9,
+    "origin_station_id": 4,
+    "origin_name": "Rabat-Agdal",
+    "destination_station_id": 5,
+    "destination_name": "Kenitra",
+    "distance_km": 41.52,
+    "typical_duration_minutes": 30
+  },
+  {
+    "route_id": 10,
+    "origin_station_id": 5,
+    "origin_name": "Kenitra",
+    "destination_station_id": 6,
+    "destination_name": "Meknès",
+    "distance_km": 103.54,
+    "typical_duration_minutes": 90
+  },
+  {
+    "route_id": 11,
+    "origin_station_id": 5,
+    "origin_name": "Kenitra",
+    "destination_station_id": 9,
+    "destination_name": "Tanger-Ville",
+    "distance_km": 179.95,
+    "typical_duration_minutes": 150
+  },
+  {
+    "route_id": 12,
+    "origin_station_id": 7,
+    "origin_name": "Fès",
+    "destination_station_id": 6,
+    "destination_name": "Meknès",
+    "distance_km": 52.78,
+    "typical_duration_minutes": 60
+  },
+  {
+    "route_id": 13,
+    "origin_station_id": 7,
+    "origin_name": "Fès",
+    "destination_station_id": 10,
+    "destination_name": "Oujda",
+    "distance_km": 292.69,
+    "typical_duration_minutes": 180
+  },
+  {
+    "route_id": 14,
+    "origin_station_id": 7,
+    "origin_name": "Fès",
+    "destination_station_id": 9,
+    "destination_name": "Tanger-Ville",
+    "distance_km": 206.47,
+    "typical_duration_minutes": 240
+  },
+  {
+    "route_id": 15,
+    "origin_station_id": 6,
+    "origin_name": "Meknès",
+    "destination_station_id": 10,
+    "destination_name": "Oujda",
+    "distance_km": 345.45,
+    "typical_duration_minutes": 240
+  },
+  {
+    "route_id": 16,
+    "origin_station_id": 8,
+    "origin_name": "Marrakech",
+    "destination_station_id": 3,
+    "destination_name": "Rabat-Ville",
+    "distance_km": 286.33,
+    "typical_duration_minutes": 200
+  },
+  {
+    "route_id": 17,
+    "origin_station_id": 3,
+    "origin_name": "Rabat-Ville",
+    "destination_station_id": 1,
+    "destination_name": "Casa-Port",
+    "distance_km": 85.54,
+    "typical_duration_minutes": 50
+  },
+  {
+    "route_id": 18,
+    "origin_station_id": 3,
+    "origin_name": "Rabat-Ville",
+    "destination_station_id": 2,
+    "destination_name": "Casa-Voyageurs",
+    "distance_km": 84.47,
+    "typical_duration_minutes": 55
+  },
+  {
+    "route_id": 19,
+    "origin_station_id": 8,
+    "origin_name": "Marrakech",
+    "destination_station_id": 2,
+    "destination_name": "Casa-Voyageurs",
+    "distance_km": 221.06,
+    "typical_duration_minutes": 180
+  },
+  {
+    "route_id": 20,
+    "origin_station_id": 9,
+    "origin_name": "Tanger-Ville",
+    "destination_station_id": 1,
+    "destination_name": "Casa-Port",
+    "distance_km": 289.63,
+    "typical_duration_minutes": 270
+  },
+  {
+    "route_id": 21,
+    "origin_station_id": 7,
+    "origin_name": "Fès",
+    "destination_station_id": 2,
+    "destination_name": "Casa-Voyageurs",
+    "distance_km": 244.25,
+    "typical_duration_minutes": 210
+  },
+  {
+    "route_id": 22,
+    "origin_station_id": 5,
+    "origin_name": "Kenitra",
+    "destination_station_id": 3,
+    "destination_name": "Rabat-Ville",
+    "distance_km": 35.77,
+    "typical_duration_minutes": 25
+  },
+  {
+    "route_id": 23,
+    "origin_station_id": 7,
+    "origin_name": "Fès",
+    "destination_station_id": 3,
+    "destination_name": "Rabat-Ville",
+    "distance_km": 169.0,
+    "typical_duration_minutes": 150
+  },
+  {
+    "route_id": 24,
+    "origin_station_id": 9,
+    "origin_name": "Tanger-Ville",
+    "destination_station_id": 3,
+    "destination_name": "Rabat-Ville",
+    "distance_km": 214.11,
+    "typical_duration_minutes": 180
+  },
+  {
+    "route_id": 25,
+    "origin_station_id": 9,
+    "origin_name": "Tanger-Ville",
+    "destination_station_id": 5,
+    "destination_name": "Kenitra",
+    "distance_km": 179.95,
+    "typical_duration_minutes": 150
+  }
+]

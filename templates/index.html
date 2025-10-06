@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarocRail Optimizer</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/translations.js"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .welcome-container {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        .welcome-container h1 {
+            color: #E30613;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .welcome-container p {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #28a745;
+            color: white;
+            border-radius: 20px;
+            margin: 1rem 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #E30613;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #b8040f;
+            transform: translateY(-2px);
+        }
+        
+        .lang-switcher-fixed {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .signature {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Courier New', monospace;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.9rem;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInSignature 2s ease-in 1s forwards;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 999;
+            backdrop-filter: blur(10px);
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .signature:hover {
+            background: rgba(0, 0, 0, 0.4);
+            transform: translateX(-50%) scale(1.08);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+        }
+        
+        .signature .name {
+            font-weight: bold;
+            background: linear-gradient(135deg, #FFD700, #FFA500, #E30613);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+            animation: glow 2s ease-in-out infinite alternate;
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+        }
+        
+        .signature .alias {
+            color: #00D9FF;
+            font-style: italic;
+            text-shadow: 0 0 10px rgba(0, 217, 255, 0.6), 0 0 20px rgba(0, 217, 255, 0.3);
+            font-weight: 600;
+        }
+        
+        @keyframes fadeInSignature {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+        
+        @keyframes glow {
+            from {
+                filter: brightness(1);
+            }
+            to {
+                filter: brightness(1.3);
+            }
+        }
+        
+        .signature::before {
+            content: '{ ';
+            color: #00FF88;
+            margin-right: 5px;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+        }
+        
+        .signature::after {
+            content: ' }';
+            color: #00FF88;
+            margin-left: 5px;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switcher-fixed lang-switcher">
+        <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+        <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+    </div>
+    <div class="welcome-container">
+        <img src="/static/logo.png" alt="MarocRail Logo" style="width: 120px; height: auto; margin-bottom: 1rem;">
+        <h1 data-i18n="appTitle">MarocRail Optimizer</h1>
+        <p data-i18n="appSubtitle">Smart Train Schedule Optimizer for Moroccan Railways</p>
+        <div class="status" data-i18n="systemRunning">✓ System Running</div>
+        
+        <p style="margin-top: 2rem;" data-i18n="mlDescription">ML-powered delay prediction and schedule optimization system with interactive dashboard</p>
+        
+        <a href="/dashboard" class="cta-button" data-i18n="openDashboard">Open Dashboard</a>
+    </div>
+    
+    <div class="signature" onclick="showEasterEgg()" title="Click for a surprise!">
+        Crafted with 🚂 by <span class="name">Mohamed Jbilou</span> <span class="alias">"Mizuchi"</span>
+    </div>
+    
+    <script>
+        // Console signature easter egg
+        const styles = [
+            'color: #E30613; font-size: 20px; font-weight: bold;',
+            'color: #667eea; font-size: 14px; font-style: italic;',
+            'color: #28a745; font-size: 12px;'
+        ];
+        
+        console.log('%c🚂 MarocRail Optimizer', styles[0]);
+        console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', styles[2]);
+        console.log(`
+  ███╗   ███╗██╗███████╗██╗   ██╗ ██████╗██╗  ██╗██╗
+  ████╗ ████║██║╚══███╔╝██║   ██║██╔════╝██║  ██║██║
+  ██╔████╔██║██║  ███╔╝ ██║   ██║██║     ███████║██║
+  ██║╚██╔╝██║██║ ███╔╝  ██║   ██║██║     ██╔══██║██║
+  ██║ ╚═╝ ██║██║███████╗╚██████╔╝╚██████╗██║  ██║██║
+  ╚═╝     ╚═╝╚═╝╚══════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝╚═╝
+        `);
+        console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', styles[2]);
+        console.log('%c👨‍💻 Created by: Mohamed Jbilou "Mizuchi"', styles[1]);
+        console.log('%c🎨 Design Philosophy: Elegant, Efficient, Exceptional', styles[2]);
+        console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n', styles[2]);
+        
+        let clickCount = 0;
+        function showEasterEgg() {
+            clickCount++;
+            
+            const messages = [
+                '🎯 Nice click! Keep exploring...',
+                '🚀 You found the easter egg!',
+                '⚡ Mizuchi style: Code with passion!',
+                '🌟 Building the future of rail transport...',
+                '🎨 Every line of code tells a story',
+                '🔥 Keep clicking, you curious soul!',
+                '💎 Excellence is not an act, but a habit',
+                '🎭 The code is poetry, the UI is art',
+                '⭐ You\'ve unlocked: Developer\'s dedication achievement!',
+                '🏆 Final message: Thank you for appreciating the craft! 🚂'
+            ];
+            
+            const colors = ['#E30613', '#667eea', '#28a745', '#ffc107', '#764ba2'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            if (clickCount <= messages.length) {
+                console.log(`%c${messages[clickCount - 1]}`, `color: ${randomColor}; font-size: 16px; font-weight: bold;`);
+            }
+            
+            if (clickCount === 10) {
+                console.log(`%c
+    🎊 CONGRATULATIONS! 🎊
+    You've discovered all easter eggs!
+    
+    "The journey of a thousand miles begins with a single step."
+    - Lao Tzu
+    
+    Keep exploring, keep learning, keep building!
+    
+    - Mohamed Jbilou "Mizuchi" 🐉
+                `, 'color: gold; font-size: 14px; font-weight: bold; background: #1a1a1a; padding: 20px;');
+            }
+        }
+        
+        // Hidden command for fun
+        window.mizuchi = function() {
+            console.clear();
+            console.log(`%c
+    ╔═══════════════════════════════════════════════════════╗
+    ║                                                       ║
+    ║          🐉 MIZUCHI'S DEVELOPER CONSOLE 🐉           ║
+    ║                                                       ║
+    ║  "Great software is built by great people"           ║
+    ║                                                       ║
+    ║  This application represents:                         ║
+    ║  ✓ Hours of dedication                                ║
+    ║  ✓ Passion for excellence                             ║
+    ║  ✓ Commitment to innovation                           ║
+    ║  ✓ Love for clean code                                ║
+    ║                                                       ║
+    ║  Technology Stack:                                    ║
+    ║  • Python Flask Backend                               ║
+    ║  • Machine Learning Integration                       ║
+    ║  • Modern Responsive UI                               ║
+    ║  • Real-time Data Visualization                       ║
+    ║                                                       ║
+    ║  Contact: Mohamed Jbilou                              ║
+    ║  Alias: Mizuchi (水神 - Water Dragon)                 ║
+    ║                                                       ║
+    ╚═══════════════════════════════════════════════════════╝
+            `, 'color: #667eea; font-family: monospace; line-height: 1.5;');
+        };
+        
+        // Subtle hint
+        setTimeout(() => {
+            console.log('%c💡 Tip: Try typing mizuchi() in the console!', 'color: #ffc107; font-style: italic;');
+        }, 3000);
+    </script>
+</body>
+</html>

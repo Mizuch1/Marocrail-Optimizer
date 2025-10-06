@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - MarocRail Optimizer</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/translations.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="nav-brand">
+                <img src="/static/logo.png" alt="MarocRail Logo" style="height: 30px; width: auto; margin-right: 10px;">
+                MarocRail Optimizer
+            </a>
+            <ul class="nav-links">
+                <li><a href="/dashboard" data-i18n="dashboard">Dashboard</a></li>
+                <li><a href="/schedules" data-i18n="schedules">Schedules</a></li>
+                <li><a href="/analytics" data-i18n="analytics">Analytics</a></li>
+                <li><a href="/predict" data-i18n="predict">Predict</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+                <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 data-i18n="systemOverview">System Overview</h1>
+        
+        <div class="stats-grid" id="stats">
+            <div class="stat-card">
+                <div class="stat-label" data-i18n="totalStations">Total Stations</div>
+                <div class="stat-value" id="stat-stations">-</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label" data-i18n="totalRoutes">Total Routes</div>
+                <div class="stat-value" id="stat-routes">-</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label" data-i18n="activeTrains">Active Trains</div>
+                <div class="stat-value" id="stat-trains">-</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label" data-i18n="onTimeRate">On-Time Rate</div>
+                <div class="stat-value" id="stat-ontime">-</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title" data-i18n="recentDelays">Recent Delays</h2>
+            </div>
+            <table id="delays-table">
+                <thead>
+                    <tr>
+                        <th data-i18n="train">Train</th>
+                        <th data-i18n="route">Route</th>
+                        <th data-i18n="delay">Delay</th>
+                        <th data-i18n="reason">Reason</th>
+                        <th data-i18n="weather">Weather</th>
+                    </tr>
+                </thead>
+                <tbody id="delays-body">
+                    <tr><td colspan="5" class="loading" data-i18n="loading">Loading...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title" data-i18n="todaySchedules">Today's Schedules</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th data-i18n="train">Train</th>
+                        <th data-i18n="route">Route</th>
+                        <th data-i18n="departure">Departure</th>
+                        <th data-i18n="platform">Platform</th>
+                        <th data-i18n="status">Status</th>
+                    </tr>
+                </thead>
+                <tbody id="schedules-body">
+                    <tr><td colspan="5" class="loading" data-i18n="loading">Loading...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        async function loadOverview() {
+            try {
+                const response = await fetch('/api/analytics/overview');
+                const data = await response.json();
+                
+                if (data.success) {
+                    document.getElementById('stat-stations').textContent = data.data.total_stations;
+                    document.getElementById('stat-routes').textContent = data.data.total_routes;
+                    document.getElementById('stat-trains').textContent = data.data.total_trains;
+                    
+                    const ontime = Math.max(0, Math.min(100, data.data.on_time_rate));
+                    document.getElementById('stat-ontime').textContent = ontime.toFixed(1) + '%';
+                }
+            } catch (error) {
+                console.error('Error loading overview:', error);
+            }
+        }
+
+        async function loadDelays() {
+            try {
+                const response = await fetch('/api/delays?limit=10');
+                const data = await response.json();
+                
+                const tbody = document.getElementById('delays-body');
+                
+                if (data.success && data.data.length > 0) {
+                    tbody.innerHTML = data.data.map(delay => `
+                        <tr>
+                            <td>${delay.train_number}</td>
+                            <td>${delay.origin_station} → ${delay.destination_station}</td>
+                            <td><span class="badge badge-warning">${delay.delay_minutes} min</span></td>
+                            <td>${delay.delay_reason}</td>
+                            <td>${delay.weather_condition}</td>
+                        </tr>
+                    `).join('');
+                } else {
+                    tbody.innerHTML = '<tr><td colspan="5">No delays found</td></tr>';
+                }
+            } catch (error) {
+                console.error('Error loading delays:', error);
+                document.getElementById('delays-body').innerHTML = 
+                    '<tr><td colspan="5" class="error">Failed to load delays</td></tr>';
+            }
+        }
+
+        async function loadSchedules() {
+            try {
+                const response = await fetch('/api/schedules?day=Monday');
+                const data = await response.json();
+                
+                const tbody = document.getElementById('schedules-body');
+                
+                if (data.success && data.data.length > 0) {
+                    tbody.innerHTML = data.data.slice(0, 10).map(schedule => {
+                        const badge = schedule.status === 'scheduled' ? 'success' : 
+                                     schedule.status === 'delayed' ? 'warning' : 'danger';
+                        return `
+                            <tr>
+                                <td><strong>${schedule.train_number}</strong> (${schedule.train_type})</td>
+                                <td>${schedule.origin_station} → ${schedule.destination_station}</td>
+                                <td>${schedule.departure_time}</td>
+                                <td>${schedule.platform}</td>
+                                <td><span class="badge badge-${badge}">${schedule.status}</span></td>
+                            </tr>
+                        `;
+                    }).join('');
+                } else {
+                    tbody.innerHTML = '<tr><td colspan="5">No schedules found</td></tr>';
+                }
+            } catch (error) {
+                console.error('Error loading schedules:', error);
+                document.getElementById('schedules-body').innerHTML = 
+                    '<tr><td colspan="5" class="error">Failed to load schedules</td></tr>';
+            }
+        }
+
+        loadOverview();
+        loadDelays();
+        loadSchedules();
+    </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - MarocRail Optimizer</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/translations.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="nav-brand">
+                <img src="/static/logo.png" alt="MarocRail Logo" style="height: 30px; width: auto; margin-right: 10px;">
+                MarocRail Optimizer
+            </a>
+            <ul class="nav-links">
+                <li><a href="/dashboard" data-i18n="dashboard">Dashboard</a></li>
+                <li><a href="/schedules" data-i18n="schedules">Schedules</a></li>
+                <li><a href="/analytics" data-i18n="analytics">Analytics</a></li>
+                <li><a href="/predict" data-i18n="predict">Predict</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+                <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 data-i18n="delayAnalytics">Delay Analytics</h1>
+        
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title" data-i18n="delaysByReason">Delays by Reason</h2>
+            </div>
+            <div class="chart-container">
+                <canvas id="reasonChart"></canvas>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title" data-i18n="delaysByHour">Delays by Hour of Day</h2>
+            </div>
+            <div class="chart-container">
+                <canvas id="hourChart"></canvas>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title" data-i18n="delaysByWeather">Delays by Weather Condition</h2>
+            </div>
+            <div class="chart-container">
+                <canvas id="weatherChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function loadAnalytics() {
+            try {
+                const response = await fetch('/api/analytics/delays');
+                const data = await response.json();
+                
+                if (!data.success) return;
+                
+                const byReason = data.data.by_reason;
+                new Chart(document.getElementById('reasonChart'), {
+                    type: 'pie',
+                    data: {
+                        labels: byReason.map(d => d.delay_reason),
+                        datasets: [{
+                            data: byReason.map(d => d.count),
+                            backgroundColor: [
+                                '#E30613', '#003B7A', '#ffc107', 
+                                '#28a745', '#6c757d'
+                            ]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+                
+                const byHour = data.data.by_hour;
+                new Chart(document.getElementById('hourChart'), {
+                    type: 'bar',
+                    data: {
+                        labels: byHour.map(d => `${d.hour}:00`),
+                        datasets: [{
+                            label: 'Number of Delays',
+                            data: byHour.map(d => d.count),
+                            backgroundColor: '#E30613'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+                
+                const byWeather = data.data.by_weather;
+                new Chart(document.getElementById('weatherChart'), {
+                    type: 'doughnut',
+                    data: {
+                        labels: byWeather.map(d => d.weather_condition),
+                        datasets: [{
+                            data: byWeather.map(d => d.count),
+                            backgroundColor: [
+                                '#ffc107', '#6c757d', '#007bff', 
+                                '#28a745', '#dc3545'
+                            ]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+                
+            } catch (error) {
+                console.error('Error loading analytics:', error);
+            }
+        }
+
+        loadAnalytics();
+    </script>
+</body>
+</html>

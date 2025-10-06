@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Delays - MarocRail Optimizer</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/translations.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="nav-brand">
+                <img src="/static/logo.png" alt="MarocRail Logo" style="height: 30px; width: auto; margin-right: 10px;">
+                MarocRail Optimizer
+            </a>
+            <ul class="nav-links">
+                <li><a href="/dashboard" data-i18n="dashboard">Dashboard</a></li>
+                <li><a href="/schedules" data-i18n="schedules">Schedules</a></li>
+                <li><a href="/analytics" data-i18n="analytics">Analytics</a></li>
+                <li><a href="/predict" data-i18n="predict">Predict</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+                <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 data-i18n="delayPrediction">Delay Prediction</h1>
+        
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title" data-i18n="trainParameters">Train Parameters</h2>
+            </div>
+            
+            <form id="predict-form" onsubmit="predictDelay(event)">
+                <div class="form-group">
+                    <label class="form-label" data-i18n="hourOfDay">Hour of Day</label>
+                    <input type="number" id="hour" class="form-control" min="0" max="23" value="8" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" data-i18n="dayOfWeek">Day of Week</label>
+                    <select id="day_of_week" class="form-control" required>
+                        <option value="1" data-i18n="monday">Monday</option>
+                        <option value="2" data-i18n="tuesday">Tuesday</option>
+                        <option value="3" data-i18n="wednesday">Wednesday</option>
+                        <option value="4" data-i18n="thursday">Thursday</option>
+                        <option value="5" data-i18n="friday">Friday</option>
+                        <option value="6" data-i18n="saturday">Saturday</option>
+                        <option value="0" data-i18n="sunday">Sunday</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" data-i18n="weatherCondition">Weather Condition</label>
+                    <select id="weather" class="form-control" required>
+                        <option value="sunny" data-i18n="sunny">Sunny</option>
+                        <option value="cloudy" data-i18n="cloudy">Cloudy</option>
+                        <option value="rainy" data-i18n="rainy">Rainy</option>
+                        <option value="foggy" data-i18n="foggy">Foggy</option>
+                        <option value="hot" data-i18n="hot">Hot</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" data-i18n="trainType">Train Type</label>
+                    <select id="train_type" class="form-control" required>
+                        <option value="3" data-i18n="highSpeed">Al Boraq (High-speed)</option>
+                        <option value="2" selected data-i18n="fast">TNR (Fast)</option>
+                        <option value="1" data-i18n="regular">Regular</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" data-i18n="distance">Distance (km)</label>
+                    <input type="number" id="distance" class="form-control" value="91" min="10" max="500" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" data-i18n="duration">Duration (minutes)</label>
+                    <input type="number" id="duration" class="form-control" value="50" min="10" max="300" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" data-i18n="trainCapacity">Train Capacity</label>
+                    <input type="number" id="capacity" class="form-control" value="400" min="100" max="600" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary" data-i18n="predictDelay">Predict Delay</button>
+            </form>
+        </div>
+
+        <div id="result" class="card" style="display: none;">
+            <div class="card-header">
+                <h2 class="card-title" data-i18n="predictionResult">Prediction Result</h2>
+            </div>
+            <div id="result-content"></div>
+        </div>
+    </div>
+
+    <script>
+        async function predictDelay(event) {
+            event.preventDefault();
+            
+            const formData = {
+                route_id: 1,
+                hour: parseInt(document.getElementById('hour').value),
+                day_of_week: parseInt(document.getElementById('day_of_week').value),
+                weather: document.getElementById('weather').value,
+                train_type_code: parseInt(document.getElementById('train_type').value),
+                capacity: parseInt(document.getElementById('capacity').value),
+                distance_km: parseFloat(document.getElementById('distance').value),
+                duration: parseInt(document.getElementById('duration').value),
+                month: 6
+            };
+            
+            try {
+                const response = await fetch('/api/predict', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    const result = data.data;
+                    const riskColor = result.risk_level === 'high' ? 'danger' : 
+                                     result.risk_level === 'medium' ? 'warning' : 'success';
+                    
+                    let html = `
+                        <div style="padding: 1.5rem;">
+                            <div style="display: flex; gap: 2rem; margin-bottom: 1.5rem;">
+                                <div>
+                                    <div style="color: #666; margin-bottom: 0.5rem;">Delay Probability</div>
+                                    <div style="font-size: 2rem; font-weight: bold; color: var(--primary);">
+                                        ${(result.delay_probability * 100).toFixed(1)}%
+                                    </div>
+                                </div>
+                                <div>
+                                    <div style="color: #666; margin-bottom: 0.5rem;">Risk Level</div>
+                                    <span class="badge badge-${riskColor}" style="font-size: 1.2rem;">
+                                        ${result.risk_level.toUpperCase()}
+                                    </span>
+                                </div>
+                            </div>
+                    `;
+                    
+                    if (result.estimated_delay_minutes) {
+                        html += `
+                            <div>
+                                <div style="color: #666; margin-bottom: 0.5rem;">Estimated Delay</div>
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #ffc107;">
+                                    ${result.estimated_delay_minutes} minutes
+                                </div>
+                            </div>
+                        `;
+                    }
+                    
+                    html += `
+                            <div style="margin-top: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 5px;">
+                                <strong>Recommendation:</strong> 
+                                ${result.risk_level === 'high' ? 'High delay risk. Consider schedule adjustment.' :
+                                  result.risk_level === 'medium' ? 'Moderate delay risk. Monitor conditions.' :
+                                  'Low delay risk. Normal operation expected.'}
+                            </div>
+                        </div>
+                    `;
+                    
+                    document.getElementById('result-content').innerHTML = html;
+                    document.getElementById('result').style.display = 'block';
+                } else {
+                    alert('Prediction failed: ' + data.error);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to predict delay');
+            }
+        }
+    </script>
+</body>
+</html>

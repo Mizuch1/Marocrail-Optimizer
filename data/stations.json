@@ -1,0 +1,102 @@
+[
+  {
+    "station_id": 1,
+    "name": "Casa-Port",
+    "city": "Casablanca",
+    "latitude": 33.6061,
+    "longitude": -7.6164,
+    "platform_count": 8,
+    "capacity": 5000,
+    "is_major": true
+  },
+  {
+    "station_id": 2,
+    "name": "Casa-Voyageurs",
+    "city": "Casablanca",
+    "latitude": 33.59,
+    "longitude": -7.5898,
+    "platform_count": 12,
+    "capacity": 8000,
+    "is_major": true
+  },
+  {
+    "station_id": 3,
+    "name": "Rabat-Ville",
+    "city": "Rabat",
+    "latitude": 34.0174,
+    "longitude": -6.834,
+    "platform_count": 10,
+    "capacity": 6000,
+    "is_major": true
+  },
+  {
+    "station_id": 4,
+    "name": "Rabat-Agdal",
+    "city": "Rabat",
+    "latitude": 33.9667,
+    "longitude": -6.8577,
+    "platform_count": 6,
+    "capacity": 3000,
+    "is_major": false
+  },
+  {
+    "station_id": 5,
+    "name": "Kenitra",
+    "city": "Kenitra",
+    "latitude": 34.261,
+    "longitude": -6.5802,
+    "platform_count": 6,
+    "capacity": 3500,
+    "is_major": true
+  },
+  {
+    "station_id": 6,
+    "name": "Meknès",
+    "city": "Meknès",
+    "latitude": 33.8935,
+    "longitude": -5.5473,
+    "platform_count": 5,
+    "capacity": 2500,
+    "is_major": false
+  },
+  {
+    "station_id": 7,
+    "name": "Fès",
+    "city": "Fès",
+    "latitude": 34.0331,
+    "longitude": -5.0003,
+    "platform_count": 8,
+    "capacity": 4000,
+    "is_major": true
+  },
+  {
+    "station_id": 8,
+    "name": "Marrakech",
+    "city": "Marrakech",
+    "latitude": 31.6295,
+    "longitude": -7.9811,
+    "platform_count": 7,
+    "capacity": 4500,
+    "is_major": true
+  },
+  {
+    "station_id": 9,
+    "name": "Tanger-Ville",
+    "city": "Tanger",
+    "latitude": 35.7595,
+    "longitude": -5.834,
+    "platform_count": 6,
+    "capacity": 3500,
+    "is_major": true
+  },
+  {
+    "station_id": 10,
+    "name": "Oujda",
+    "city": "Oujda",
+    "latitude": 34.6867,
+    "longitude": -1.9114,
+    "platform_count": 5,
+    "capacity": 2000,
+    "is_major": false
+  }
+]
