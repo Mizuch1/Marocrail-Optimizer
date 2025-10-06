@@ -386,9 +386,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgments
 
 - Built with ❤️ using Flask, Scikit-learn, and modern web technologies
-- ONCF (Office National des Chemins de Fer du Maroc) for inspiration
+- ONCF (Office National des Chemins de Fer du Maroc)
 - Special thanks to the open-source community for amazing tools and libraries
-- Inspired by modern railway management and optimization systems
 - All data is synthetic and generated for educational purposes
 
 ---
@@ -431,7 +430,7 @@ if __name__ == "__main__":
 
 ### 👤 Author
 
-**Mohamed Jbilou "Mizuchi" 🐉**
+**Mohamed Jbilou "Mizuchi"**
 
 _Full-Stack Developer | ML Engineer | Rail Transport Enthusiast_
 
