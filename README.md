@@ -6,6 +6,12 @@ A sophisticated machine learning-driven train schedule optimization solution dev
 
 ---
 
+## 🌐 Live Demo
+
+**🚀 Try it now:** [https://marocrail-optimizer-n7c9.onrender.com](https://marocrail-optimizer-n7c9.onrender.com)
+
+> **Note:** The app is hosted on Render's free tier. First load may take 30-60 seconds (cold start). Subsequent loads are instant!
+
 ---
 
 ## 📋 Table of Contents
