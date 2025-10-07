@@ -12,7 +12,7 @@ dist/
 build/
 
 # Database
-*.db
+# *.db (commented out - we need the database for deployment)
 *.sqlite
 *.sqlite3
 
@@ -26,9 +26,9 @@ build/
 .DS_Store
 Thumbs.db
 
-# Models
-*.pkl
-*.joblib
+# Models (commented out - we need trained models for deployment)
+# *.pkl
+# *.joblib
 *.h5
 
 # Logs
