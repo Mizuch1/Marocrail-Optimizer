@@ -8,7 +8,7 @@ A sophisticated machine learning-driven train schedule optimization solution dev
 
 ## 🌐 Live Demo
 
-**🚀 Try it now:** [https://marocrail-optimizer-n7c9.onrender.com](https://marocrail-optimizer-n7c9.onrender.com)
+** Try it now:** [https://marocrail-optimizer-n7c9.onrender.com](https://marocrail-optimizer-n7c9.onrender.com)
 
 > **Note:** The app is hosted on Render's free tier. First load may take 30-60 seconds (cold start). Subsequent loads are instant!
 
@@ -31,7 +31,7 @@ A sophisticated machine learning-driven train schedule optimization solution dev
 
 ---
 
-## ✨ Features
+##  Features
 
 This application provides a comprehensive railway management experience with intelligent automation and modern analytics:
 
@@ -42,14 +42,14 @@ This application provides a comprehensive railway management experience with int
 - **Real-Time Predictions**: Instant delay risk assessment for any train configuration
 - **31 Engineered Features**: Advanced feature engineering for optimal accuracy
 
-### 📊 Schedule Optimization
+###  Schedule Optimization
 - **Conflict Detection**: Heuristic-based platform and turnaround time conflict identification
 - **Automated Adjustments**: Intelligent schedule modifications and platform reassignments
 - **Risk Mitigation**: Identifies and resolves high-risk train scenarios
 - **Performance Tracking**: Real-time monitoring of optimization effectiveness
 - **Scalable Algorithm**: Handles multiple trains and routes simultaneously
 
-### 🎨 Interactive Bilingual Dashboard
+###  Interactive Bilingual Dashboard
 - **System Overview**: Real-time statistics, on-time rate, and key performance metrics
 - **Schedule Viewer**: Filterable train schedules by day, route, and status
 - **Visual Analytics**: Beautiful delay analysis with Chart.js (pie, bar, doughnut charts)
@@ -64,7 +64,7 @@ This application provides a comprehensive railway management experience with int
 - **Optimized Database**: SQLite with efficient schema and indexing (8.75 MB)
 - **Data Integrity**: Comprehensive validation and relationship management
 
-### 🛠️ Technical Excellence
+###  Technical Excellence
 - **RESTful API**: Complete API endpoints for all data access
 - **Session Management**: Persistent user preferences and language selection
 - **Modern Frontend**: Clean HTML5/CSS3 with vanilla JavaScript
@@ -93,7 +93,7 @@ python app.py
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 | Layer | Technology |
 |-------|------------|
@@ -106,7 +106,7 @@ python app.py
 
 ---
 
-## 📦 Installation
+##  Installation
 
 ### Prerequisites
 - Python 3.9 or higher
@@ -142,7 +142,7 @@ Open browser: `http://localhost:5000`
 
 ---
 
-## 🚀 Usage
+##  Usage
 
 ### Running the Application
 ```bash
@@ -248,7 +248,7 @@ MarocRail-Optimizer/
 
 ---
 
-## 📊 Data
+##  Data
 
 ### Synthetic Data Generation
 
@@ -273,7 +273,7 @@ MarocRail-Optimizer/
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 ┌─────────────┐
@@ -298,11 +298,11 @@ MarocRail-Optimizer/
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
 <div align="center">
 
-### 🏠 Welcome Page & Language Support
+###  Welcome Page & Language Support
 <table>
   <tr>
     <td align="center">
@@ -313,7 +313,7 @@ MarocRail-Optimizer/
   </tr>
 </table>
 
-### 📊 Dashboard & Real-Time Analytics
+###  Dashboard & Real-Time Analytics
 <table>
   <tr>
     <td align="center">
@@ -331,7 +331,7 @@ MarocRail-Optimizer/
   </tr>
 </table>
 
-### 🚆 Schedule & Prediction Management
+###  Schedule & Prediction Management
 <table>
   <tr>
     <td align="center">
@@ -353,7 +353,7 @@ MarocRail-Optimizer/
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Mizuch1/MarocRail-Optimizer/issues).
 
