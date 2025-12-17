@@ -6,7 +6,7 @@ A sophisticated machine learning-driven train schedule optimization solution dev
 
 ---
 
-## 🌐 Live Demo
+##  Live Demo
 
 ** Try it now:** [https://marocrail-optimizer-n7c9.onrender.com](https://marocrail-optimizer-n7c9.onrender.com)
 
@@ -57,7 +57,7 @@ This application provides a comprehensive railway management experience with int
 - **Language Switcher**: Complete English/French bilingual support
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
 
-### 🗄️ Complete Data Pipeline
+###  Complete Data Pipeline
 - **Synthetic Data Generation**: Realistic simulation of 10 stations, 25 routes, 80 trains
 - **Historical Records**: 6 months of delay data (~34,160 records)
 - **Passenger Analytics**: Flow simulation (~54,284 records)
@@ -75,7 +75,7 @@ This application provides a comprehensive railway management experience with int
 
 ---
 
-## 🎥 Demo
+##  Demo
 
 **Run the application:**
 ```bash
