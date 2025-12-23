@@ -1,49 +1,47 @@
-# MarocRail Optimizer 
+# MarocRail Optimizer
 
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/) [![Flask](https://img.shields.io/badge/Flask-3.0.0-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/) [![Scikit-Learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/) [![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/) [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://html.spec.whatwg.org/) [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/) [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chart.js&logoColor=white)](https://www.chartjs.org/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 A sophisticated machine learning-driven train schedule optimization solution developed during my internship at ONCF (Moroccan Railways). This smart solution addresses real operational issues by predicting train delays, scheduling optimization, and providing real-time analytics through an interactive bilingual web dashboard to railway operators.
 
-
 ---
-Demo: [marocrail-optimizer-production.up.railway.app](https://marocrail-optimizer-production.up.railway.app/)
----
-##  Table of Contents
 
-- [Features](#-features)
-- [Demo](#-demo)
-- [Technology Stack](#-technology-stack)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [Project Structure](#-project-structure)
-- [ML Model Performance](#-ml-model-performance)
-- [API Documentation](#-api-documentation)
-- [Data](#-data)
-- [Architecture](#-architecture)
-- [Future Enhancements](#-future-enhancements)
-- [License](#-license)
+## Table of Contents
+
+- [Features](#features)
+- [Demo](#demo)
+- [Technology Stack](#technology-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [ML Model Performance](#ml-model-performance)
+- [API Documentation](#api-documentation)
+- [Data](#data)
+- [Architecture](#architecture)
+- [Future Enhancements](#future-enhancements)
+- [License](#license)
 
 ---
 
-##  Features
+## Features
 
 This application provides a comprehensive railway management experience with intelligent automation and modern analytics:
 
-###  Machine Learning Prediction
+### Machine Learning Prediction
 - **Delay Prediction AI**: Random Forest classifier with **79% accuracy**
 - **Smart Analysis**: Predicts delay probability and estimated duration
 - **Context-Aware**: Considers weather conditions, time patterns, route history, and cascade effects
 - **Real-Time Predictions**: Instant delay risk assessment for any train configuration
 - **31 Engineered Features**: Advanced feature engineering for optimal accuracy
 
-###  Schedule Optimization
+### Schedule Optimization
 - **Conflict Detection**: Heuristic-based platform and turnaround time conflict identification
 - **Automated Adjustments**: Intelligent schedule modifications and platform reassignments
 - **Risk Mitigation**: Identifies and resolves high-risk train scenarios
 - **Performance Tracking**: Real-time monitoring of optimization effectiveness
 - **Scalable Algorithm**: Handles multiple trains and routes simultaneously
 
-###  Interactive Bilingual Dashboard
+### Interactive Bilingual Dashboard
 - **System Overview**: Real-time statistics, on-time rate, and key performance metrics
 - **Schedule Viewer**: Filterable train schedules by day, route, and status
 - **Visual Analytics**: Beautiful delay analysis with Chart.js (pie, bar, doughnut charts)
@@ -51,14 +49,14 @@ This application provides a comprehensive railway management experience with int
 - **Language Switcher**: Complete English/French bilingual support
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
 
-###  Complete Data Pipeline
+### Complete Data Pipeline
 - **Synthetic Data Generation**: Realistic simulation of 10 stations, 25 routes, 80 trains
 - **Historical Records**: 6 months of delay data (~34,160 records)
 - **Passenger Analytics**: Flow simulation (~54,284 records)
 - **Optimized Database**: SQLite with efficient schema and indexing (8.75 MB)
 - **Data Integrity**: Comprehensive validation and relationship management
 
-###  Technical Excellence
+### Technical Excellence
 - **RESTful API**: Complete API endpoints for all data access
 - **Session Management**: Persistent user preferences and language selection
 - **Modern Frontend**: Clean HTML5/CSS3 with vanilla JavaScript
@@ -69,14 +67,9 @@ This application provides a comprehensive railway management experience with int
 
 ---
 
-##  Demo
+## Demo
 
-**Run the application:**
-```bash
-python app.py
-```
-
-**Open in browser:** `http://localhost:5000`
+**Live Application:** [https://marocrail-optimizer-production.up.railway.app/](https://marocrail-optimizer-production.up.railway.app/)
 
 **Pages:**
 - `/` - Home page
@@ -87,7 +80,7 @@ python app.py
 
 ---
 
-##  Technology Stack
+## Technology Stack
 
 | Layer | Technology |
 |-------|------------|
@@ -100,7 +93,7 @@ python app.py
 
 ---
 
-##  Installation
+## Installation
 
 ### Prerequisites
 - Python 3.9 or higher
@@ -136,7 +129,7 @@ Open browser: `http://localhost:5000`
 
 ---
 
-##  Usage
+## Usage
 
 ### Running the Application
 ```bash
@@ -166,7 +159,7 @@ python scripts/test_api.py
 
 ---
 
-##  Project Structure
+## Project Structure
 
 ```
 MarocRail-Optimizer/
@@ -220,7 +213,7 @@ MarocRail-Optimizer/
 
 ---
 
-##  ML Model Performance
+## ML Model Performance
 
 ### Delay Classifier
 - **Algorithm**: Random Forest (100 estimators)
@@ -242,7 +235,7 @@ MarocRail-Optimizer/
 
 ---
 
-##  Data
+## Data
 
 ### Synthetic Data Generation
 
@@ -267,7 +260,7 @@ MarocRail-Optimizer/
 
 ---
 
-##  Architecture
+## Architecture
 
 ```
 ┌─────────────┐
@@ -292,11 +285,11 @@ MarocRail-Optimizer/
 
 ---
 
-##  Screenshots
+## Screenshots
 
 <div align="center">
 
-###  Welcome Page & Language Support
+### Welcome Page & Language Support
 <table>
   <tr>
     <td align="center">
@@ -307,13 +300,13 @@ MarocRail-Optimizer/
   </tr>
 </table>
 
-###  Dashboard & Real-Time Analytics
+### Dashboard & Real-Time Analytics
 <table>
   <tr>
     <td align="center">
       <img src="images-readme/Dashboard.PNG" alt="System Dashboard" width="800">
       <br>
-      <em>System Overview - Real-time Statistics, Recent Delays & Today's Schedules</em>
+      <em>System Overview - Real-time Statistics, Recent Delays & Today&#39;s Schedules</em>
     </td>
   </tr>
   <tr>
@@ -325,7 +318,7 @@ MarocRail-Optimizer/
   </tr>
 </table>
 
-###  Schedule & Prediction Management
+### Schedule & Prediction Management
 <table>
   <tr>
     <td align="center">
@@ -347,7 +340,7 @@ MarocRail-Optimizer/
 
 ---
 
-##  Contributing
+## Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Mizuch1/MarocRail-Optimizer/issues).
 
@@ -360,7 +353,7 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 ---
 
-##  License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
@@ -370,7 +363,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📞 Let's Connect!
+## Let&#39;s Connect!
 
 <div align="center">
 
@@ -383,9 +376,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-##  Acknowledgments
+## Acknowledgments
 
-- Built with ❤️ using Flask, Scikit-learn, and modern web technologies
+- Built with using Flask, Scikit-learn, and modern web technologies
 - ONCF (Office National des Chemins de Fer du Maroc)
 - Special thanks to the open-source community for amazing tools and libraries
 - All data is synthetic and generated for educational purposes
@@ -421,14 +414,14 @@ if __name__ == "__main__":
     print(marocrail.display_info())
     print(marocrail.signature())
     print(marocrail.mission())
-    print("\n🚂 May your trains be on time and your code bug-free! 🚂")
+    print("\nMay your trains be on time and your code bug-free!")
 ```
 
 ---
 
 <div align="center">
 
-### 👤 Author
+### Author
 
 **Mohamed Jbilou "Mizuchi"**
 
@@ -436,7 +429,8 @@ _Full-Stack Developer | ML Engineer | Rail Transport Enthusiast_
 
 ---
 
-_Made with ☕ and 💻 by Mizuchi_
+_Made with by Mizuchi_
 
+**If you find this project interesting, please consider starring it!**
 
 </div>
