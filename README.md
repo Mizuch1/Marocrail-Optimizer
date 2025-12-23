@@ -1,4 +1,4 @@
-# MarocRail Optimizer 🚂
+# MarocRail Optimizer 
 
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/) [![Flask](https://img.shields.io/badge/Flask-3.0.0-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/) [![Scikit-Learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/) [![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/) [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://html.spec.whatwg.org/) [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://www.w3.org/Style/CSS/) [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chart.js&logoColor=white)](https://www.chartjs.org/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
@@ -8,7 +8,7 @@ A sophisticated machine learning-driven train schedule optimization solution dev
 ---
 Demo: [marocrail-optimizer-production.up.railway.app](https://marocrail-optimizer-production.up.railway.app/)
 ---
-## 📋 Table of Contents
+##  Table of Contents
 
 - [Features](#-features)
 - [Demo](#-demo)
@@ -29,7 +29,7 @@ Demo: [marocrail-optimizer-production.up.railway.app](https://marocrail-optimize
 
 This application provides a comprehensive railway management experience with intelligent automation and modern analytics:
 
-### 🤖 Machine Learning Prediction
+###  Machine Learning Prediction
 - **Delay Prediction AI**: Random Forest classifier with **79% accuracy**
 - **Smart Analysis**: Predicts delay probability and estimated duration
 - **Context-Aware**: Considers weather conditions, time patterns, route history, and cascade effects
@@ -166,7 +166,7 @@ python scripts/test_api.py
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 MarocRail-Optimizer/
@@ -220,7 +220,7 @@ MarocRail-Optimizer/
 
 ---
 
-## 📈 ML Model Performance
+##  ML Model Performance
 
 ### Delay Classifier
 - **Algorithm**: Random Forest (100 estimators)
@@ -360,7 +360,7 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
@@ -383,7 +383,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Built with ❤️ using Flask, Scikit-learn, and modern web technologies
 - ONCF (Office National des Chemins de Fer du Maroc)
@@ -438,6 +438,5 @@ _Full-Stack Developer | ML Engineer | Rail Transport Enthusiast_
 
 _Made with ☕ and 💻 by Mizuchi_
 
-**⭐ If you find this project interesting, please consider starring it! ⭐**
 
 </div>
