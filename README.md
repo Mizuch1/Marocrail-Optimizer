@@ -306,7 +306,7 @@ MarocRail-Optimizer/
     <td align="center">
       <img src="images-readme/Dashboard.PNG" alt="System Dashboard" width="800">
       <br>
-      <em>System Overview - Real-time Statistics, Recent Delays & Today's Schedules</em>
+      <em>System Overview - Real-time Statistics, Recent Delays & Today&#39;s Schedules</em>
     </td>
   </tr>
   <tr>
@@ -363,7 +363,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## Let's Connect!
+## Let&#39;s Connect!
 
 <div align="center">
 
