@@ -4,13 +4,6 @@
 
 A sophisticated machine learning-driven train schedule optimization solution developed during my internship at ONCF (Moroccan Railways). This smart solution addresses real operational issues by predicting train delays, scheduling optimization, and providing real-time analytics through an interactive bilingual web dashboard to railway operators.
 
----
-
-##  Live Demo
-
-** Try it now:** [https://marocrail-optimizer-n7c9.onrender.com](https://marocrail-optimizer-n7c9.onrender.com)
-
-> **Note:** The app is hosted on Render's free tier. First load may take 30-60 seconds (cold start). Subsequent loads are instant!
 
 ---
 
