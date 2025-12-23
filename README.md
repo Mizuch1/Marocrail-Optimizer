@@ -69,7 +69,7 @@ This application provides a comprehensive railway management experience with int
 
 ## Demo
 
-**Live Application:** [https://marocrail-optimizer-production.up.railway.app/](https://marocrail-optimizer-production.up.railway.app/)
+**Live Application:** [marocrail.up.railway.app/](marocrail.up.railway.app)
 
 **Pages:**
 - `/` - Home page
